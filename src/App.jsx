@@ -1,35 +1,34 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
-
+import { useState } from 'react';
+import reactLogo from './assets/react.svg';
+import viteLogo from '/vite.svg';
+import './App.css';
+import Auth from './components/Auth';
+import Clock from './components/Clock';
+import Timer from './components/Timer';
 function App() {
-  const [count, setCount] = useState(0)
+  const [activeComponent, setActiveComponent] = useState('Clock');
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    <div>
+       <div style={{ display: 'flex' }}>
+      {/* Sidebar */}
+      <nav style={{ width: 200, borderRight: '1px solid #ffff' }}>
+        <ul>
+          <li onClick={() => setActiveComponent('Clock')} style={{ cursor: 'pointer' }}>Saat</li>
+          <li onClick={() => setActiveComponent('Timer')} style={{ cursor: 'pointer' }}>Kronometre</li>
+          {/* Diğer menü öğeleri */}
+        </ul>
+      </nav>
+
+      {/* Ana içerik */}
+      <main style={{ flexGrow: 1, padding: 20 }}>
+        {activeComponent === 'saat' && <Clock />}
+        {activeComponent === 'kronometre' && <Timer />}
+        {/* Diğer componentler */}
+      </main>
+    </div>
+    </div>
   )
 }
 
-export default App
+export default App;
