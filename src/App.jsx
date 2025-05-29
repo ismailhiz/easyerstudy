@@ -1,34 +1,66 @@
 import { useState } from 'react';
-import reactLogo from './assets/react.svg';
-import viteLogo from '/vite.svg';
-import './App.css';
+import { FaClock, FaStopwatch, } from 'react-icons/fa'; // <-- ikonlar buradan
+import { BiTask } from 'react-icons/bi'; 
+import { LuNotebookPen,LuBrainCircuit } from "react-icons/lu";
+import { RiFocus2Line } from "react-icons/ri";
+import { PiClockCountdown } from "react-icons/pi";
+import { BsStopwatch } from "react-icons/bs";
+import { GoGoal } from "react-icons/go";
 import Auth from './components/Auth';
 import Clock from './components/Clock';
 import Timer from './components/Timer';
+import Goals from './components/Goals';
+import Notes from './components/Notes';
+import StudyTechnicals from './components/StudyTechnicals';
+import Task from './components/Task';
+import ArtificialIntelligence from './components/ArtificialIntelligence';
+import './App.css';
+import './index.css';
+
 function App() {
   const [activeComponent, setActiveComponent] = useState('Clock');
 
   return (
-    <div>
-       <div style={{ display: 'flex' }}>
+    <div className="app-container">
       {/* Sidebar */}
-      <nav style={{ width: 200, borderRight: '1px solid #ffff' }}>
+      <nav className="navbar">
         <ul>
-          <li onClick={() => setActiveComponent('Clock')} style={{ cursor: 'pointer' }}>Saat</li>
-          <li onClick={() => setActiveComponent('Timer')} style={{ cursor: 'pointer' }}>Kronometre</li>
-          {/* Diğer menü öğeleri */}
+          <li onClick={() => setActiveComponent('Clock')}>
+            <PiClockCountdown size={30} />
+          </li>
+          <li onClick={() => setActiveComponent('Timer')}>
+            <BsStopwatch size={30} />
+          </li>
+          <li onClick={() => setActiveComponent('Goals')}>
+            <GoGoal size={30} />
+          </li>
+          <li onClick={() => setActiveComponent('Notes')}>
+            <LuNotebookPen size={30} />
+          </li>
+          <li onClick={() => setActiveComponent('StudyTechnicals')}>
+            <RiFocus2Line size={30} />
+          </li>
+          <li onClick={() => setActiveComponent('Task')}>
+            <BiTask size={30} />
+          </li>
+          <li onClick={() => setActiveComponent('ArtificialIntelligence')}>
+            <LuBrainCircuit size={30} />
+          </li>
         </ul>
       </nav>
 
       {/* Ana içerik */}
-      <main style={{ flexGrow: 1, padding: 20 }}>
-        {activeComponent === 'saat' && <Clock />}
-        {activeComponent === 'kronometre' && <Timer />}
-        {/* Diğer componentler */}
+      <main className="main-content">
+        {activeComponent === 'Clock' && <Clock />}
+        {activeComponent === 'Timer' && <Timer />}
+        {activeComponent === 'Goals' && <Goals />}
+        {activeComponent === 'Notes' && <Notes />}
+        {activeComponent === 'StudyTechnicals' && <StudyTechnicals />}
+        {activeComponent === 'Task' && <Task />}
+        {activeComponent === 'ArtificialIntelligence' && <ArtificialIntelligence />}
       </main>
     </div>
-    </div>
-  )
+  );
 }
 
 export default App;
