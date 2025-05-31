@@ -10,7 +10,7 @@
   }
   
   .clock-display {
-    font-size: 4rem;
+    font-size: 10rem;
     font-weight: bold;
     user-select: none;
   }
@@ -41,16 +41,42 @@
   .default {
     background-color: #f0f0f0;
     color: #333;
+    font-family: 'Chakra Petch', sans-serif;
   }
   
   .dark {
-    background-color: #222;
+    background-color: black;
     color: #fff;
+    font-family: 'Chakra Petch', sans-serif;
   }
   
   .neon {
-    background-color: #000;
+    background-color: black;
     color: #0ff;
-    text-shadow: 0 0 10px #0ff, 0 0 20px #0ff;
+    text-shadow: 0 0 2px #0ff, 0 0 10px #0ff;
+    font-family: 'Share Tech Mono', monospace;
   }
-  
+ 
+  .black-white {
+    background-color: black;
+    color: #fff;
+    font-family: 'Rajdhani', sans-serif;
+  }
+  .space-mono {
+    background-color: black;
+    color: #fff;
+    font-family: 'Space Mono', monospace;
+  }
+ 
+
+  .clock-container.red-glow {
+    background-color: black; 
+    color: #ff2c2c; 
+    font-family: 'Chakra Petch', sans-serif;
+  }
+  .Audiowide{
+    font-family: 'Audiowide', sans-serif;
+    background-color: black;
+    color: #fff;
+  }
+
