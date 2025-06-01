@@ -1,0 +1,76 @@
+.timer-container {
+    min-height: 100vh;
+    padding: 2rem;
+    font-family: 'DS-Digital', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    transition: all 0.3s ease;
+  }
+  
+  /* 🌞 Light Tema */
+  .timer-container.light {
+    background-color: #ffffff;
+    color: #000000;
+  }
+  
+  /* 🌙 Dark Tema */
+  .timer-container.dark {
+    background-color: #000000;
+    color: #ffffff;
+  }
+  
+  .theme-toggle {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: inherit;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+  }
+  
+  .theme-toggle:hover {
+    transform: scale(1.2);
+  }
+  
+  .timer-display {
+    font-size: 8rem;
+    margin-bottom: 2rem;
+  }
+  .timer-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+  }
+  .timer-buttons button {
+    padding: 8px 12px;
+    font-size: 1rem;
+    background-color: inherit;
+    color: inherit;
+    border: 2px solid currentColor;
+    border-radius: 8px;
+    cursor: pointer;
+    width: 200px;
+    transition: background-color 0.2s ease;
+  }
+  
+  .timer-buttons button:hover {
+    background-color: rgba(128, 128, 128, 0.2);
+  }
+  
+  .lap-list {
+    margin-top: 2rem;
+    list-style: none;
+    padding: 0;
+    font-size: 1.1rem;
+  }
+  
+
+  /* Timer kısmında tur kısmını 3 4 sıralı yaparsın
+  aksi halde tek satırda saati kaydırıyor. */
