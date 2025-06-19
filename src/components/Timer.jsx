@@ -58,13 +58,13 @@ const Timer = () => {
         <button onClick={handleReset}>Sıfırla</button>
       </div>
 
-      {laps.length > 0 && (
-        <ul className="lap-list">
-          {laps.map((lap, index) => (
-            <li key={index}>Tur {index + 1}: {formatTime(lap)}</li>
-          ))}
-        </ul>
-      )}
+      <ul className={`lap-list ${laps.length > 0 ? 'visible' : ''}`}>
+  {laps.map((lap, index) => (
+    <li key={index}>Tur {index + 1}: {formatTime(lap)}</li>
+  ))}
+</ul>
+
+
     </div>
   );
 };
